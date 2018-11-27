@@ -12,6 +12,12 @@ public class ArraylistPractice{
 			two.add(i);
 		}
 
+		ArrayList<Integer> three = new ArrayList<Integer>();
+		three = combiner(one, two);
+		printer(three);
+
+		removeDuplicates(three);
+
 
 	}
 
@@ -27,6 +33,33 @@ public class ArraylistPractice{
 		}
 
 		return x;
+
+	}
+
+	public static void printer(ArrayList<Integer> a){
+
+		for(int i=0; i<a.size(); i++){
+			System.out.print(a.get(i)+" , ");
+		}
+
+	}
+
+	public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> a){
+
+		ArrayList<Integer> z = new ArrayList<>();
+		int c;
+
+		for(int i=0; i<a.size(); i++){
+			c = 0;
+			for(int j=0; j<z.size(); j++){
+				if (a.get(i) == z.get(j))
+				c++;
+			}
+			if (c==0)
+			z.add(a.get(i));
+		}
+
+		return z;
 
 	}
 
